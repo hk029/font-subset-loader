@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "font-subset-loader",
+  "version": "0.0.0",
+  "description": "font subset loader module for webpack",
+  "author": "Andreas Tietz https://github.com/dematerializer",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "loader-utils": "^0.2.14"
+  },
+  "peerDependencies": {
+    "fontmin": "^0.9.6"
+  },
+  "devDependencies": {}
+}
