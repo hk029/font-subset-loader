@@ -9,6 +9,8 @@ Transforms a font resource so that it contains only a specified subset of glyphs
 font-subset-loader requires [fontmin](https://github.com/ecomfe/fontmin)
 as a [`peerDependency`](https://docs.npmjs.com/files/package.json#peerdependencies). Thus you are able to specify the required version accurately.
 
+[![david](https://david-dm.org/dematerializer/font-subset-loader.svg)](https://david-dm.org/dematerializer/font-subset-loader)
+
 ## Usage
 
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
