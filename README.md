@@ -13,18 +13,52 @@ as a [`peerDependency`](https://docs.npmjs.com/files/package.json#peerdependenci
 
 ## Usage
 
-[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
+[Webpack Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
+
+Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-subset?glyphs=hey,you!'`). It is therefore recommended to instead use a query object for passing the glyphs to the loader as a property:
 
 ``` javascript
-require("font-subset!./file.ttf?glyphs=abc");
-// returns the file content of the subsetted file.ttf that contains only the specified glyphs a, b and c
+{
+	test: /\.ttf$/,
+	loader: 'font-subset',
+	query: { glyphs: 'abc!' }
+}
+// returns the file content of the subsetted file.ttf
+// that contains only the specified glyphs a, b, c and !
 ```
 
 ## Usage with other loaders
 
+Process subsetted `.ttf` files with file-loader:
+
 ``` javascript
-require("file!font-subset!./file.ttf?glyphs=abc");
-require("url!font-subset!./file.ttf?glyphs=abc");
+loaders: [
+	{
+		test: /\.ttf$/,
+		loader: 'file'
+	},
+	{
+		test: /\.ttf$/,
+		loader: 'font-subset',
+		query: { glyphs: 'abc!' }
+	}
+]
+```
+
+Process subsetted `.ttf` files with url-loader:
+
+``` javascript
+loaders: [
+	{
+		test: /\.ttf$/,
+		loader: 'url'
+	},
+	{
+		test: /\.ttf$/,
+		loader: 'font-subset',
+		query: { glyphs: 'abc!' }
+	}
+]
 ```
 
 ## License
