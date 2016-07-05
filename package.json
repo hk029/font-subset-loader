@@ -13,7 +13,7 @@
   "homepage": "https://github.com/dematerializer/font-subset-loader",
   "license": "MIT",
   "scripts": {
-    "test": "node node_modules/webpack/bin/webpack.js --config test/webpack.config.js"
+    "test": "./node_modules/.bin/mocha ./test/spec.js --timeout 10000 || true"
   },
   "files": [
     "index.js"
@@ -26,8 +26,11 @@
     "fontmin": "^0.9.6"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.9",
     "file-loader": "^0.8.5",
+    "mocha": "^2.5.3",
+    "opentype.js": "^0.6.4",
     "webpack": "^1.13.0"
   }
 }

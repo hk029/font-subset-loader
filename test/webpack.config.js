@@ -1,19 +1,13 @@
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
-	entry: ['./test/test.js'],
+	context: __dirname,
+	entry: [],
   output: {
-		path: __dirname + '/_out',
+		path: __dirname + '/.out',
 		filename: 'bundle.js'
 	},
-	module: {
-		loaders: [
-			{
-				test: /\.ttf$/,
-				loader: 'file!../index.js?glyphs=abc'
-			}
-		]
-	},
+	module: {},
 	plugins: [
-		new CleanWebpackPlugin(['_out'])
+		new CleanWebpackPlugin([__dirname + '/.out'], { verbose: false })
 	]
 };
