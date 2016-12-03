@@ -24,7 +24,7 @@ Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-
 	query: { glyphs: 'hey,you!' }
 }
 // returns the file content of the subsetted file.ttf
-// that contains only the specified glyphs h, e, y, o, u and !
+// that contains only the specified glyphs 'h', 'e', 'y', ',', 'o', 'u' and '!'
 ```
 
 ## Usage with other loaders
