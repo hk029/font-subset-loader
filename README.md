@@ -1,6 +1,6 @@
 # font subset loader for webpack
 
-Transforms a font resource so that it contains only a specified subset of glyphs with all other glyphs stripped out.
+Transforms a TTF font resource so that it contains only a specified subset of glyphs with all other glyphs stripped out.
 
 ## Install
 
@@ -21,10 +21,10 @@ Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-
 {
 	test: /\.ttf$/,
 	loader: 'font-subset',
-	query: { glyphs: 'abc!' }
+	query: { glyphs: 'hey,you!' }
 }
 // returns the file content of the subsetted file.ttf
-// that contains only the specified glyphs a, b, c and !
+// that contains only the specified glyphs h, e, y, o, u and !
 ```
 
 ## Usage with other loaders
@@ -40,7 +40,7 @@ loaders: [
 	{
 		test: /\.ttf$/,
 		loader: 'font-subset',
-		query: { glyphs: 'abc!' }
+		query: { glyphs: 'hey,you!' }
 	}
 ]
 ```
@@ -56,7 +56,7 @@ loaders: [
 	{
 		test: /\.ttf$/,
 		loader: 'font-subset',
-		query: { glyphs: 'abc!' }
+		query: { glyphs: 'hey,you!' }
 	}
 ]
 ```
