@@ -6,24 +6,19 @@ Transforms a TTF font resource so that it contains only a specified subset of gl
 
 ## Install
 
-`npm install font-subset-loader fontmin --save-dev`
-
-font-subset-loader requires [fontmin](https://github.com/ecomfe/fontmin)
-as a [`peerDependency`](https://docs.npmjs.com/files/package.json#peerdependencies). Thus you are able to specify the required version accurately.
-
-[![david](https://david-dm.org/dematerializer/font-subset-loader.svg)](https://david-dm.org/dematerializer/font-subset-loader)
+`npm install font-subset-loader2 --save-dev`
 
 ## Usage
 
 [Webpack Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
-Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-subset?glyphs=hey,you!'`). It is therefore recommended to instead use a query object for passing the glyphs to the loader as a property:
+Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-subset-loader2?glyphs=hey,you!'`). It is therefore recommended to instead use a query object for passing the glyphs to the loader as a property:
 
 ``` javascript
 {
     test: /\.ttf$/,
     use: [{
-        loader: 'font-subset',
+        loader: 'font-subset-loader2',
         options: { 
             glyphs: 'hey,you!' 
         }
@@ -46,7 +41,7 @@ rules: [
 		        loader: 'file-loader'
             },
             {
-                loader: 'font-subset',
+                loader: 'font-subset-loader2',
                 options: { 
                     glyphs: 'hey,you!' 
                 }
@@ -67,7 +62,7 @@ rules: [
 		        loader: 'url-loader'
             },
             {
-                loader: 'font-subset',
+                loader: 'font-subset-loader2',
                 options: { 
                     glyphs: 'hey,you!' 
                 }
