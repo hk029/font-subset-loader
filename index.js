@@ -1,14 +1,18 @@
 var loaderUtils = require('loader-utils');
-var Fontmin = require('fontmin')
-module.exports = function (content) {
+var Fontmin = require('fontmin');
+module.exports = function(content) {
 	this.cacheable && this.cacheable();
 	var callback = this.async();
-	var query = loaderUtils.parseQuery(this.query);
+	var options = loaderUtils.getOptions(this);
 	new Fontmin()
 		.src(content)
-		.use(Fontmin.glyph({ text: query.glyphs }))
-		.run(function (err, files) {
-			callback(err, files[0].contents);
+		.use(Fontmin.glyph({ text: options.query.glyphs }))
+		.run(function(err, files) {
+			if (err) {
+				console.log(err);
+			} else {
+				callback(err, files[0].contents);
+			}
 		});
 };
 module.exports.raw = true;
