@@ -1,6 +1,6 @@
 {
   "name": "font-subset-loader2",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "font subset loader module for webpack",
   "author": "Andreas Tietz (https://github.com/dematerializer)",
   "contributes": {},
