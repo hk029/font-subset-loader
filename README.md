@@ -19,9 +19,15 @@ Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-
 
 ``` javascript
 {
-	test: /\.ttf$/,
-	loader: 'font-subset',
-	query: { glyphs: 'hey,you!' }
+    test: /\.ttf$/,
+    use: [{
+        loader: 'font-subset',
+        options: { 
+	        query: { 
+                glyphs: 'hey,you!' 
+            }
+        }
+    }]
 }
 // returns the file content of the subsetted file.ttf
 // that contains only the specified glyphs 'h', 'e', 'y', ',', 'o', 'u' and '!'
@@ -32,32 +38,46 @@ Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-
 Process subsetted `.ttf` files with file-loader:
 
 ``` javascript
-loaders: [
+rules: [
 	{
-		test: /\.ttf$/,
-		loader: 'file'
+        test: /\.ttf$/,
+        use: [
+            {
+		        loader: 'file-loader'
+            },
+            {
+                loader: 'font-subset',
+                options: { 
+                    query: { 
+                        glyphs: 'hey,you!' 
+                    }
+                }
+            }
+        ]
 	},
-	{
-		test: /\.ttf$/,
-		loader: 'font-subset',
-		query: { glyphs: 'hey,you!' }
-	}
 ]
 ```
 
 Process subsetted `.ttf` files with url-loader:
 
 ``` javascript
-loaders: [
+rules: [
 	{
-		test: /\.ttf$/,
-		loader: 'url'
+        test: /\.ttf$/,
+        use: [
+            {
+		        loader: 'url-loader'
+            },
+            {
+                loader: 'font-subset',
+                options: { 
+                    query: { 
+                        glyphs: 'hey,you!' 
+                    }
+                }
+            }
+        ]
 	},
-	{
-		test: /\.ttf$/,
-		loader: 'font-subset',
-		query: { glyphs: 'hey,you!' }
-	}
 ]
 ```
 
