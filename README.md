@@ -1,4 +1,6 @@
-# font subset loader for webpack (new version for webpack 4+)
+# font subset loader for webpack 
+
+> Thanks for dematerializer's work. Consider his package is obsolete, so I have forked this package and make it compatible with webpack 4+
 
 Transforms a TTF font resource so that it contains only a specified subset of glyphs with all other glyphs stripped out.
 
