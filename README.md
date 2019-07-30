@@ -1,4 +1,4 @@
-# font subset loader for webpack
+# font subset loader for webpack (new version for webpack 4+)
 
 Transforms a TTF font resource so that it contains only a specified subset of glyphs with all other glyphs stripped out.
 
