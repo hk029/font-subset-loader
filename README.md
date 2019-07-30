@@ -23,9 +23,7 @@ Glyphs like `!` or `,` conflict with webpack's query string syntax (i.e. `'font-
     use: [{
         loader: 'font-subset',
         options: { 
-	        query: { 
-                glyphs: 'hey,you!' 
-            }
+            glyphs: 'hey,you!' 
         }
     }]
 }
@@ -48,9 +46,7 @@ rules: [
             {
                 loader: 'font-subset',
                 options: { 
-                    query: { 
-                        glyphs: 'hey,you!' 
-                    }
+                    glyphs: 'hey,you!' 
                 }
             }
         ]
@@ -71,9 +67,7 @@ rules: [
             {
                 loader: 'font-subset',
                 options: { 
-                    query: { 
-                        glyphs: 'hey,you!' 
-                    }
+                    glyphs: 'hey,you!' 
                 }
             }
         ]

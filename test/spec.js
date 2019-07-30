@@ -22,7 +22,7 @@ var test = (fontName, glyphs, expectedGlyphs = glyphs) => {
                         { 
                             loader: '../index.js', 
                             options: { 
-                                query: { glyphs: glyphs } 
+                               glyphs: glyphs 
                             } 
                         }
 					]

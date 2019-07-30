@@ -6,7 +6,7 @@ module.exports = function(content) {
 	var options = loaderUtils.getOptions(this);
 	new Fontmin()
 		.src(content)
-		.use(Fontmin.glyph({ text: options.query.glyphs }))
+		.use(Fontmin.glyph({ text: options.glyphs }))
 		.run(function(err, files) {
 			if (err) {
 				console.log(err);
